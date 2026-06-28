@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>أكاديمية الخطوة الأولى لكرة القدم</title>
+
+  <meta name="description" content="أكاديمية الخطوة الأولى لكرة القدم بمدينة الحمام - الساحل الشمالي، لتأسيس اللاعبين وتنمية مهاراتهم وصناعة جيل مؤهل للأندية الكبرى والاحتراف." />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=elite-home-2" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#home" class="brand">
+        <div class="brand-logo">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="شعار أكاديمية الخطوة الأولى" onerror="this.style.display='none'">
+          <span>1</span>
+        </div>
+
+        <div class="brand-text">
+          <strong>أكاديمية الخطوة الأولى</strong>
+          <small>First Step Football Academy</small>
+        </div>
+      </a>
+
+     <nav class="nav-menu" id="navMenu">
+  <a href="#home">الرئيسية</a>
+  <a href="#about">عن الأكاديمية</a>
+  <a href="#programs">برامج التدريب</a>
+  <a href="#coach">الإشراف الفني</a>
+  <a href="#identity">الهوية</a>
+  <a href="#join">الاشتراك</a>
+  <a href="#contact">تواصل معنا</a>
+   </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+   <section class="hero-section elite-home-section" id="home">
+  <div class="elite-bg-grid"></div>
+  <div class="elite-light elite-light-one"></div>
+  <div class="elite-light elite-light-two"></div>
+  <div class="elite-field"></div>
+
+  <div class="container elite-home-grid">
+
+    <div class="elite-home-copy">
+      <div class="elite-badge">
+        <span>⚽</span>
+        <strong>First Step Football Academy</strong>
+      </div>
+
+      <h1>
+        أكاديمية الخطوة الأولى
+        <span>بداية اللاعب الحقيقية نحو مستوى أعلى</span>
+      </h1>
+
+      <p>
+        نؤسس اللاعب من البداية، نطوّر مهاراته، ونبني شخصيته داخل الملعب
+        من خلال تدريب منظم، متابعة فنية، وبيئة رياضية محفزة.
+      </p>
+
+      <div class="elite-actions">
+        <a href="#join" class="btn btn-primary">سجّل لاعبك الآن</a>
+        <a href="#programs" class="btn btn-outline">برامج الأكاديمية</a>
+      </div>
+
+      <div class="elite-process">
+        <div>
+          <strong>01</strong>
+          <span>تقييم اللاعب</span>
+        </div>
+        <div>
+          <strong>02</strong>
+          <span>برنامج مناسب</span>
+        </div>
+        <div>
+          <strong>03</strong>
+          <span>تطوير مستمر</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="elite-visual">
+      <div class="elite-visual-card">
+        <div class="elite-card-top">
+          <span>Academy Identity</span>
+          <strong>انتماء · أداء · مستقبل</strong>
+        </div>
+
+        <div class="elite-logo-stage">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="أكاديمية الخطوة الأولى">
+          <div class="elite-ball" id="movingBall"></div>
+        </div>
+
+        <div class="elite-card-bottom">
+          <div>
+            <strong>تأسيس</strong>
+            <span>من أول لمسة</span>
+          </div>
+          <div>
+            <strong>مهارة</strong>
+            <span>تدريب عملي</span>
+          </div>
+          <div>
+            <strong>احتراف</strong>
+            <span>طريق واضح</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="elite-floating-card floating-a">
+        <span>🏃</span>
+        <strong>تدريب منظم</strong>
+      </div>
+
+      <div class="elite-floating-card floating-b">
+        <span>🏆</span>
+        <strong>تجهيز للمنافسة</strong>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="elite-strip">
+    <div class="elite-strip-track">
+      <span>تأسيس صحيح</span>
+      <span>تطوير مهاري</span>
+      <span>إشراف فني</span>
+      <span>متابعة شهرية</span>
+      <span>انضباط</span>
+      <span>ثقة</span>
+      <span>طريق الاحتراف</span>
+
+      <span>تأسيس صحيح</span>
+      <span>تطوير مهاري</span>
+      <span>إشراف فني</span>
+      <span>متابعة شهرية</span>
+      <span>انضباط</span>
+      <span>ثقة</span>
+      <span>طريق الاحتراف</span>
+    </div>
+  </div>
+ </section>
+
+   <section class="section about-section premium-about-section" id="about">
+  <div class="container">
+
+    <div class="about-page-header">
+      <span class="mini-title">عن الأكاديمية</span>
+      <h2>أكاديمية الخطوة الأولى.. بداية منظمة لصناعة لاعب حقيقي</h2>
+      <p>
+        أكاديمية كرة قدم بمدينة الحمام تهدف إلى تأسيس اللاعبين من البداية، وتنمية مهاراتهم الفنية والبدنية والذهنية،
+        داخل بيئة تدريبية آمنة ومنظمة تساعد كل لاعب على اكتشاف قدراته والتطور خطوة بخطوة.
+      </p>
+    </div>
+
+    <div class="about-hero-grid">
+      <div class="about-hero-content">
+        <span>First Step Football Academy</span>
+        <h3>نبدأ من الأساس.. ونبني طريق المستقبل</h3>
+        <p>
+          الخطوة الأولى ليست مجرد مكان للتدريب، بل مشروع رياضي يركز على اكتشاف المواهب الصغيرة،
+          تأسيسها بشكل صحيح، وتعليم اللاعب معنى الالتزام والانتماء والعمل الجماعي، مع تطوير مهاراته
+          ليكون مؤهلًا للعب في مستويات أعلى داخل الأندية.
+        </p>
+
+        <div class="about-signature">
+          <strong>انتماء.. أداء.. مستقبل</strong>
+          <small>شعار نعمل به داخل الملعب وخارجه.</small>
+        </div>
+      </div>
+
+      <div class="about-logo-panel">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="شعار أكاديمية الخطوة الأولى">
+        <h3>أكاديمية الخطوة الأولى</h3>
+        <p>تصنع الأبطال من أول خطوة</p>
+      </div>
+    </div>
+
+    <div class="about-mission-grid">
+      <div class="mission-card">
+        <div class="mission-icon">🎯</div>
+        <h3>رؤيتنا</h3>
+        <p>
+          أن تكون الأكاديمية نقطة انطلاق حقيقية للاعبين الموهوبين في مدينة الحمام والساحل الشمالي،
+          وتأهيلهم فنيًا وبدنيًا للانتقال إلى مستويات أعلى.
+        </p>
+      </div>
+
+      <div class="mission-card">
+        <div class="mission-icon">⚽</div>
+        <h3>رسالتنا</h3>
+        <p>
+          تقديم تدريب منظم يساعد اللاعب على تعلم أساسيات كرة القدم بطريقة صحيحة،
+          مع تنمية الشخصية الرياضية والانضباط والثقة بالنفس.
+        </p>
+      </div>
+
+      <div class="mission-card">
+        <div class="mission-icon">🚀</div>
+        <h3>هدفنا</h3>
+        <p>
+          صناعة لاعب قادر على المنافسة، يمتلك مهارة وشخصية وطموحًا، ويكون جاهزًا لاختبارات الأندية
+          وفرص التطور والاحتراف مستقبلًا.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-why-section">
+      <div class="why-title">
+        <span class="mini-title">لماذا الخطوة الأولى؟</span>
+        <h3>لأن اللاعب يحتاج إلى تأسيس صحيح قبل أي حلم كبير</h3>
+        <p>
+          كثير من المواهب تضيع بسبب غياب التأسيس والمتابعة. لذلك نعتمد على تدريب تدريجي واضح
+          يساعد اللاعب وولي الأمر على رؤية التطور الحقيقي.
+        </p>
+      </div>
+
+      <div class="why-list">
+        <div>
+          <strong>تدريب مناسب للسن</strong>
+          <p>كل لاعب يتدرب بما يناسب عمره ومستواه، بدون ضغط زائد أو عشوائية.</p>
+        </div>
+
+        <div>
+          <strong>تطوير مهاري وبدني</strong>
+          <p>نهتم بالكرة، الحركة، السرعة، الرشاقة، والثقة داخل الملعب.</p>
+        </div>
+
+        <div>
+          <strong>بيئة آمنة ومحفزة</strong>
+          <p>مناخ تدريبي يساعد اللاعب على التعلم، الالتزام، وحب اللعبة.</p>
+        </div>
+
+        <div>
+          <strong>متابعة وتقييم</strong>
+          <p>متابعة مستوى اللاعب وتحديد نقاط القوة والضعف لتطويره باستمرار.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-process">
+      <div class="process-card">
+        <span>01</span>
+        <h3>تسجيل اللاعب</h3>
+        <p>ولي الأمر يملأ استمارة التسجيل ببيانات اللاعب كاملة.</p>
+      </div>
+
+      <div class="process-card">
+        <span>02</span>
+        <h3>تقييم أولي</h3>
+        <p>تحديد مستوى اللاعب ومهاراته الأساسية قبل اختيار البرنامج.</p>
+      </div>
+
+      <div class="process-card">
+        <span>03</span>
+        <h3>برنامج مناسب</h3>
+        <p>توجيه اللاعب للبرنامج الأنسب حسب السن والمستوى والهدف.</p>
+      </div>
+
+      <div class="process-card">
+        <span>04</span>
+        <h3>تطوير ومتابعة</h3>
+        <p>تدريب مستمر ومتابعة تطور اللاعب داخل الأكاديمية.</p>
+      </div>
+     </div>
+ 
+     <div class="about-location-box">
+      <div>
+        <h3>مكان التدريب</h3>
+        <p>الساحل الشمالي – مدينة الحمام – ملعب مشري</p>
+      </div>
+
+      <a href="#join" class="btn btn-primary">سجّل لاعبك الآن</a>
+      </div>
+
+     </div>
+ </section>
+
+    <section class="section programs-section" id="programs">
+  <div class="container">
+    <div class="programs-page-head">
+      <span class="mini-title">برامج الأكاديمية</span>
+      <h2>من أول لمسة.. إلى لاعب جاهز للمنافسة</h2>
+      <p>
+        تعتمد أكاديمية الخطوة الأولى على برامج تدريب منظمة تناسب عمر اللاعب ومستواه،
+        بداية من التأسيس الصحيح، مرورًا بتطوير المهارات، وحتى الإعداد للمباريات واختبارات الأندية.
+      </p>
+    </div>
+
+    <div class="programs-roadmap">
+      <div class="roadmap-step">
+        <span>01</span>
+        <h3>تقييم أولي</h3>
+        <p>تحديد مستوى اللاعب فنيًا وبدنيًا قبل بداية البرنامج.</p>
+      </div>
+
+      <div class="roadmap-step">
+        <span>02</span>
+        <h3>تأسيس وتطوير</h3>
+        <p>تدريبات مناسبة لعمر اللاعب ومستواه داخل الملعب.</p>
+      </div>
+
+      <div class="roadmap-step">
+        <span>03</span>
+        <h3>متابعة شهرية</h3>
+        <p>تقييم تطور اللاعب وتحديد نقاط القوة والضعف.</p>
+      </div>
+
+      <div class="roadmap-step">
+        <span>04</span>
+        <h3>إعداد للمنافسة</h3>
+        <p>تجهيز اللاعب للمباريات والاختبارات والانتقال لمستوى أعلى.</p>
+      </div>
+    </div>
+
+    <div class="academy-programs-grid">
+      <div class="academy-program-card featured-program">
+        <div class="program-icon">⚽</div>
+        <h3>برنامج التأسيس</h3>
+        <p>
+          مخصص للاعبين في بداية الطريق، ويهتم بتعليم أساسيات كرة القدم بشكل صحيح:
+          الحركة، التوازن، لمس الكرة، التمرير، الاستلام، والانضباط داخل الملعب.
+        </p>
+        <ul>
+          <li>تعليم أساسيات كرة القدم</li>
+          <li>تنمية الثقة والسيطرة على الكرة</li>
+          <li>تأسيس بدني مناسب للسن</li>
+        </ul>
+      </div>
+
+      <div class="academy-program-card">
+        <div class="program-icon">🏃</div>
+        <h3>برنامج تطوير المهارات</h3>
+        <p>
+          برنامج عملي لرفع جودة اللاعب في المراوغة، التمرير، التسديد، التحرك بدون كرة،
+          واتخاذ القرار داخل مواقف اللعب.
+        </p>
+        <ul>
+          <li>مراوغة وتحكم في الكرة</li>
+          <li>تمرير واستلام تحت ضغط</li>
+          <li>تسديد وتحرك داخل الملعب</li>
+        </ul>
+      </div>
+
+      <div class="academy-program-card">
+        <div class="program-icon">💪</div>
+        <h3>برنامج الإعداد البدني</h3>
+        <p>
+          تدريبات بدنية مناسبة للناشئين تهدف إلى تحسين السرعة، الرشاقة، التوازن،
+          قوة التحمل، والجاهزية البدنية بدون تحميل زائد على اللاعب.
+        </p>
+        <ul>
+          <li>سرعة ورشاقة</li>
+          <li>توازن وتوافق حركي</li>
+          <li>تحمل بدني مناسب للمرحلة العمرية</li>
+        </ul>
+      </div>
+
+      <div class="academy-program-card">
+        <div class="program-icon">🧤</div>
+        <h3>برنامج حراس المرمى</h3>
+        <p>
+          برنامج خاص لتدريب حراس المرمى على التمركز، رد الفعل، الإمساك بالكرة،
+          التعامل مع العرضيات، وبناء شخصية الحارس.
+        </p>
+        <ul>
+          <li>تمركز ورد فعل</li>
+          <li>تعامل مع التسديدات والعرضيات</li>
+          <li>ثقة وقيادة داخل الملعب</li>
+        </ul>
+      </div>
+
+      <div class="academy-program-card">
+        <div class="program-icon">🏆</div>
+        <h3>برنامج تجهيز الاختبارات</h3>
+        <p>
+          مخصص للاعبين الذين يرغبون في دخول اختبارات الأندية، مع التركيز على الجاهزية،
+          الانضباط، الثقة، وإظهار نقاط قوة اللاعب أمام المدربين.
+        </p>
+        <ul>
+          <li>محاكاة مواقف الاختبارات</li>
+          <li>رفع جاهزية اللاعب</li>
+          <li>توجيه فني قبل التقييم</li>
+        </ul>
+      </div>
+
+      <div class="academy-program-card">
+        <div class="program-icon">📊</div>
+        <h3>التقييم والمتابعة</h3>
+        <p>
+          متابعة دورية لمستوى اللاعب من خلال ملاحظات فنية تساعد ولي الأمر والإدارة
+          على معرفة تطور اللاعب وخطته القادمة.
+        </p>
+        <ul>
+          <li>تقييم فني وبدني</li>
+          <li>تحديد نقاط القوة والضعف</li>
+          <li>خطة تطوير مستمرة</li>
+        </ul>
+      </div>
+     </div>
+
+     <div class="age-groups-box">
+      <div>
+        <span class="mini-title">الفئات العمرية</span>
+        <h3>برامج مناسبة لكل مرحلة سنية</h3>
+        <p>
+          يتم تقسيم اللاعبين حسب السن والمستوى لضمان استفادة كل لاعب من التدريب
+          بالطريقة المناسبة له.
+        </p>
+      </div>
+
+      <div class="age-groups-list">
+        <span>من 5 إلى 7 سنوات</span>
+        <span>من 8 إلى 10 سنوات</span>
+        <span>من 11 إلى 13 سنة</span>
+        <span>من 14 إلى 16 سنة</span>
+      </div>
+     </div>
+
+     <div class="programs-cta">
+      <h3>ابدأ تقييم لاعبك الآن</h3>
+      <p>
+        سجّل بيانات اللاعب، وسيتم التواصل معك لتحديد البرنامج الأنسب حسب سنه ومستواه.
+      </p>
+      <a href="#join" class="btn btn-primary">سجّل لاعبك الآن</a>
+     </div>
+     </div>
+  </section>
+
+   <section class="section coach-section premium-coach-section" id="coach">
+  <div class="container">
+
+    <div class="coach-page-header">
+      <span class="mini-title">الإشراف الفني</span>
+      <h2>خبرة الملعب.. ورؤية صناعة الأبطال</h2>
+      <p>
+        تعتمد أكاديمية الخطوة الأولى على قيادة فنية تجمع بين خبرة اللاعب داخل الملعب
+        ورؤية المدرب في تأسيس وتطوير اللاعبين خطوة بخطوة.
+      </p>
+    </div>
+
+    <div class="coach-profile-layout">
+
+      <div class="coach-profile-card">
+        <div class="coach-photo-wrap">
+          <img src="{{ url_for('static', filename='images/coach.png') }}" alt="كابتن إبراهيم صلاح">
+          <div class="coach-photo-badge">Technical Director</div>
+        </div>
+
+        <div class="coach-profile-info">
+          <h3>كابتن / إبراهيم صلاح</h3>
+          <p>مؤسس وصاحب أكاديمية الخطوة الأولى لكرة القدم</p>
+
+          <div class="coach-contact-mini">
+            <span>لاعب سابق</span>
+            <span>مدرب خبرة</span>
+            <span>صناعة ناشئين</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="coach-main-content">
+        <div class="coach-title-block">
+          <span>القيادة الفنية</span>
+          <h3>من خبرة الملاعب إلى بناء جيل جديد من اللاعبين</h3>
+        </div>
+
+        <p>
+          كابتن / إبراهيم صلاح، لاعب نادي مدينة الحمام ونادي الاتحاد السكندري سابقًا،
+          وصاحب خبرات ميدانية وتدريبية متعددة، يسعى من خلال أكاديمية الخطوة الأولى
+          إلى اكتشاف المواهب الصغيرة، تأسيسها بشكل صحيح، وتنمية قدراتها الفنية والبدنية
+          والذهنية، لتكون مؤهلة للمنافسة والانتقال إلى مستويات أعلى داخل الأندية الكبرى،
+          وصولًا إلى حلم الاحتراف.
+        </p>
+
+        <div class="coach-quote">
+          <strong>رسالتنا</strong>
+          <p>
+            اللاعب لا يُصنع بالموهبة فقط، بل بالتأسيس الصحيح، الانضباط، التوجيه،
+            والمتابعة المستمرة من أول خطوة داخل الملعب.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="coach-experience-grid">
+      <div class="coach-experience-card">
+        <span>01</span>
+        <h3>خبرة كلاعب</h3>
+        <p>
+          خبرة داخل الملعب من خلال اللعب في نادي مدينة الحمام ونادي الاتحاد السكندري،
+          بما يمنح التدريب رؤية عملية حقيقية.
+        </p>
+      </div>
+
+      <div class="coach-experience-card">
+        <span>02</span>
+        <h3>خبرة تدريبية</h3>
+        <p>
+          تولى تدريب العديد من الفرق، واكتسب خبرة في التعامل مع مستويات وأعمار مختلفة
+          من اللاعبين.
+        </p>
+      </div>
+
+      <div class="coach-experience-card">
+        <span>03</span>
+        <h3>تأسيس ناشئين</h3>
+        <p>
+          تركيز خاص على بناء أساس اللاعب: المهارة، الشخصية، الالتزام، والثقة داخل الملعب.
+        </p>
+      </div>
+
+      <div class="coach-experience-card">
+        <span>04</span>
+        <h3>رؤية احترافية</h3>
+        <p>
+          إعداد اللاعب للانتقال من مرحلة التعلم إلى المنافسة، ثم التجهيز لاختبارات الأندية
+          والمستويات الأعلى.
+        </p>
+      </div>
+    </div>
+
+    <div class="coach-method-section">
+      <div class="method-text">
+        <span class="mini-title">منهج التدريب</span>
+        <h3>طريقة عمل واضحة مع كل لاعب</h3>
+        <p>
+          لا نعتمد على التدريب العشوائي، بل على متابعة اللاعب وتقييم مستواه وتحديد ما يحتاجه
+          فنيًا وبدنيًا وذهنيًا، ثم العمل عليه بشكل تدريجي.
+        </p>
+      </div>
+
+      <div class="method-list">
+        <div>
+          <strong>تقييم أولي</strong>
+          <p>تحديد مستوى اللاعب قبل بداية التدريب.</p>
+        </div>
+
+        <div>
+          <strong>خطة تطوير</strong>
+          <p>اختيار البرنامج المناسب حسب السن والمستوى.</p>
+        </div>
+
+        <div>
+          <strong>متابعة مستمرة</strong>
+          <p>ملاحظة تطور اللاعب وتوجيهه فنيًا.</p>
+        </div>
+
+        <div>
+          <strong>إعداد للمنافسة</strong>
+          <p>تجهيز اللاعب للمباريات والاختبارات.</p>
+        </div>
+      </div>
+     </div>
+
+     <div class="coach-cta-box">
+      <div>
+        <h3>ابدأ رحلة لاعبك تحت إشراف فني متخصص</h3>
+        <p>
+          سجّل بيانات اللاعب الآن، وسيتم التواصل مع ولي الأمر لتحديد البرنامج المناسب
+          حسب عمر اللاعب ومستواه.
+        </p>
+      </div>
+
+      <a href="#join" class="btn btn-primary">سجّل لاعبك الآن</a>
+     </div>
+ 
+     </div>
+ </section>
+
+    <section class="section values-section">
+      <div class="container">
+        <div class="values-box">
+          <h2>انتماء.. أداء.. مستقبل</h2>
+          <p>
+            شعارنا ليس مجرد كلمات، بل طريق واضح لبناء لاعب ملتزم، قوي، طموح،
+            ويملك شخصية قادرة على التطور.
+          </p>
+        </div>
+      </div>
+    </section>
+
+<section class="section identity-section" id="identity">
+  <div class="container">
+    <div class="section-heading">
+      <span>هوية الأكاديمية</span>
+      <h2>انتماء.. أداء.. مستقبل</h2>
+      <p>
+        هوية أكاديمية الخطوة الأولى مبنية على روح الانتماء، جدية الأداء، وطموح المستقبل،
+        لنصنع لاعبًا يعرف قيمة التدريب والالتزام منذ البداية.
+      </p>
+    </div>
+
+    <div class="identity-grid">
+      <div class="identity-card large">
+        <img src="{{ url_for('static', filename='images/poster.jpg') }}" alt="بوستر افتتاح أكاديمية الخطوة الأولى">
+        <div class="identity-info">
+          <h3>افتتاح أكاديمية الخطوة الأولى</h3>
+          <p>
+            بداية جديدة لصناعة الأبطال داخل مدينة الحمام، ببرامج تدريبية منظمة
+            ومدربين متخصصين لتنمية مهارات اللاعبين.
+          </p>
+        </div>
+      </div>
+
+      <div class="identity-card">
+        <img src="{{ url_for('static', filename='images/uniform.jpg') }}" alt="الزي الرسمي لأكاديمية الخطوة الأولى">
+        <div class="identity-info">
+          <h3>الزي الرسمي للأكاديمية</h3>
+          <p>
+            تصميم يعكس شخصية الأكاديمية وشعارها الأساسي:
+            انتماء.. أداء.. مستقبل.
+          </p>
+        </div>
+      </div>
+     </div>
+     </div>
+  </section>
+
+  <section class="section join-section premium-register-section" id="join">
+  <div class="container">
+
+    <div class="register-header">
+      <span class="mini-title">استمارة التسجيل الرسمية</span>
+      <h2>طلب حجز لاعب جديد</h2>
+      <p>
+        سجل بيانات اللاعب بدقة، وسيتم إنشاء طلب منظم باسم اللاعب، مع حفظ البيانات داخل سجل الأكاديمية
+        وإرسال ملخص الطلب إلى واتساب الإدارة.
+      </p>
+    </div>
+
+    <div class="register-layout">
+
+      <aside class="register-side">
+        <div class="register-side-card">
+          <div class="side-logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="شعار أكاديمية الخطوة الأولى">
+          </div>
+
+          <h3>أكاديمية الخطوة الأولى</h3>
+          <p>
+            بداية منظمة لتأسيس اللاعب، تطوير مهاراته، وتجهيزه للمنافسة داخل بيئة تدريبية آمنة ومحفزة.
+          </p>
+
+          <div class="register-steps">
+            <div class="register-step active">
+              <span>01</span>
+              <div>
+                <strong>بيانات اللاعب</strong>
+                <small>الاسم، السن، المركز، المستوى</small>
+              </div>
+            </div>
+
+            <div class="register-step">
+              <span>02</span>
+              <div>
+                <strong>بيانات ولي الأمر</strong>
+                <small>التواصل والعنوان والواتساب</small>
+              </div>
+            </div>
+
+            <div class="register-step">
+              <span>03</span>
+              <div>
+                <strong>التدريب والدفع</strong>
+                <small>نوع الاشتراك وطريقة السداد</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="register-info-box">
+            <strong>مكان التدريب</strong>
+            <p>الساحل الشمالي – مدينة الحمام – ملعب مشري</p>
+          </div>
+
+          <div class="register-contact-box">
+            <a href="tel:01225990118">01225990118</a>
+            <a href="tel:01142007771">01142007771</a>
+          </div>
+        </div>
+      </aside>
+
+      <form class="join-form professional-form register-form-card" id="joinForm">
+
+        <div class="form-top-note">
+          <div>
+            <strong>طلب تسجيل جديد</strong>
+            <span>يرجى إدخال البيانات كما هي في الواقع لتسهيل التواصل والمتابعة.</span>
+          </div>
+          <div class="form-badge">PDF + WhatsApp</div>
+        </div>
+
+        <div class="form-part">
+          <div class="form-part-title">
+            <span>01</span>
+            <div>
+              <h3>بيانات اللاعب</h3>
+              <p>البيانات الأساسية التي تساعدنا في تحديد البرنامج المناسب.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="playerName">اسم اللاعب بالكامل</label>
+              <input type="text" id="playerName" placeholder="مثال: علي خالد محمد" required>
+            </div>
+
+            <div class="form-group">
+              <label for="playerAge">سن اللاعب</label>
+              <input type="number" id="playerAge" placeholder="مثال: 11" required>
+            </div>
+
+            <div class="form-group">
+              <label for="birthDate">تاريخ الميلاد</label>
+              <input type="date" id="birthDate">
+            </div>
+
+            <div class="form-group">
+              <label for="playerPosition">مركز اللاعب</label>
+              <select id="playerPosition" required>
+                <option value="">اختر المركز</option>
+                <option value="حارس مرمى">حارس مرمى</option>
+                <option value="مدافع">مدافع</option>
+                <option value="خط وسط">خط وسط</option>
+                <option value="جناح">جناح</option>
+                <option value="مهاجم">مهاجم</option>
+                <option value="لم يتحدد بعد">لم يتحدد بعد</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="playerLevel">مستوى اللاعب الحالي</label>
+              <select id="playerLevel" required>
+                <option value="">اختر المستوى</option>
+                <option value="مبتدئ">مبتدئ</option>
+                <option value="متوسط">متوسط</option>
+                <option value="متقدم">متقدم</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredFoot">القدم المفضلة</label>
+              <select id="preferredFoot">
+                <option value="">اختر</option>
+                <option value="القدم اليمنى">القدم اليمنى</option>
+                <option value="القدم اليسرى">القدم اليسرى</option>
+                <option value="كلتا القدمين">كلتا القدمين</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="previousAcademy">هل لعب سابقًا؟</label>
+              <select id="previousAcademy">
+                <option value="">اختر</option>
+                <option value="لم يلعب سابقًا">لم يلعب سابقًا</option>
+                <option value="لعب في أكاديمية">لعب في أكاديمية</option>
+                <option value="لعب في نادي">لعب في نادي</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="healthNotes">ملاحظات صحية</label>
+              <input type="text" id="healthNotes" placeholder="إصابات / حساسية / لا يوجد">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-part">
+          <div class="form-part-title">
+            <span>02</span>
+            <div>
+              <h3>بيانات ولي الأمر</h3>
+              <p>بيانات التواصل الرسمية لتأكيد الحجز ومواعيد التدريب.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="guardianName">اسم ولي الأمر بالكامل</label>
+              <input type="text" id="guardianName" placeholder="مثال: خالد محمد أحمد" required>
+            </div>
+
+            <div class="form-group">
+              <label for="relation">صلة القرابة</label>
+              <select id="relation">
+                <option value="">اختر</option>
+                <option value="الأب">الأب</option>
+                <option value="الأم">الأم</option>
+                <option value="الأخ">الأخ</option>
+                <option value="ولي أمر آخر">ولي أمر آخر</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">رقم الهاتف الأساسي</label>
+              <input type="tel" id="phoneNumber" placeholder="مثال: 01234567890" required>
+            </div>
+
+            <div class="form-group">
+              <label for="whatsappNumber">رقم واتساب</label>
+              <input type="tel" id="whatsappNumber" placeholder="رقم واتساب للتواصل" required>
+            </div>
+
+            <div class="form-group">
+              <label for="alternativePhone">رقم بديل</label>
+              <input type="tel" id="alternativePhone" placeholder="اختياري">
+            </div>
+
+            <div class="form-group">
+              <label for="area">المنطقة / العنوان</label>
+              <input type="text" id="area" placeholder="مثال: مدينة الحمام">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-part">
+          <div class="form-part-title">
+            <span>03</span>
+            <div>
+              <h3>التدريب والدفع</h3>
+              <p>اختيار نوع الاشتراك وطريقة الدفع المناسبة لولي الأمر.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="trainingGoal">هدف التسجيل</label>
+              <select id="trainingGoal">
+                <option value="">اختر الهدف</option>
+                <option value="تأسيس من البداية">تأسيس من البداية</option>
+                <option value="تطوير المهارات">تطوير المهارات</option>
+                <option value="تجهيز لاختبارات الأندية">تجهيز لاختبارات الأندية</option>
+                <option value="رفع اللياقة والثقة">رفع اللياقة والثقة</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredTime">الموعد المناسب</label>
+              <input type="text" id="preferredTime" placeholder="مثال: مساءً / أيام معينة">
+            </div>
+
+            <div class="form-group">
+              <label for="subscriptionType">نوع الاشتراك</label>
+              <select id="subscriptionType" required>
+                <option value="">اختر نوع الاشتراك</option>
+                <option value="حصة تجربة">حصة تجربة</option>
+                <option value="اشتراك شهري">اشتراك شهري</option>
+                <option value="برنامج تأسيس">برنامج تأسيس</option>
+                <option value="برنامج تطوير">برنامج تطوير</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="paymentMethod">طريقة الدفع</label>
+              <select id="paymentMethod" required>
+                <option value="">اختر طريقة الدفع</option>
+                <option value="كاش في الملعب">كاش في الملعب</option>
+                <option value="محفظة إلكترونية">محفظة إلكترونية</option>
+                <option value="Instapay">Instapay</option>
+                <option value="تحويل بنكي">تحويل بنكي</option>
+                <option value="لم يتم تحديد طريقة الدفع">لم يتم تحديد طريقة الدفع</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="paymentStatus">حالة الدفع</label>
+              <select id="paymentStatus">
+                <option value="لم يتم الدفع">لم يتم الدفع</option>
+                <option value="تم الدفع">تم الدفع</option>
+                <option value="دفع جزئي">دفع جزئي</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="paymentReference">رقم العملية / ملاحظة الدفع</label>
+              <input type="text" id="paymentReference" placeholder="اختياري">
+            </div>
+
+            <div class="form-group full">
+              <label for="notes">ملاحظات إضافية</label>
+              <textarea id="notes" placeholder="أي بيانات إضافية تساعد الإدارة في متابعة الطلب"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="approval-box premium-approval">
+          <span>✓</span>
+          <p>
+            بالضغط على إرسال الطلب، يقر ولي الأمر بصحة البيانات المدخلة ويوافق على تواصل إدارة الأكاديمية معه
+            لتأكيد الاشتراك ومواعيد التدريب وآلية الدفع.
+          </p>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-btn register-submit-btn">
+          إنشاء طلب الحجز وإرساله على واتساب
+        </button>
+
+        <p class="form-hint">
+          سيتم إنشاء طلب باسم اللاعب وحفظ بياناته داخل سجل الأكاديمية.
+        </p>
+      </form>
+
+     </div>
+     </div>
+ </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading light">
+          <span>تواصل معنا</span>
+          <h2>مستنيين أبطال الخطوة الأولى</h2>
+          <p>للاستفسار عن المواعيد والاشتراك، تواصل معنا مباشرة.</p>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="tel:01225990118">
+            <span>📞</span>
+            <h3>اتصال مباشر</h3>
+            <p>01225990118</p>
+          </a>
+
+          <a class="contact-card" href="tel:01142007771">
+            <span>📱</span>
+            <h3>رقم إضافي</h3>
+            <p>01142007771</p>
+          </a>
+
+          <div class="contact-card">
+            <span>📍</span>
+            <h3>مكان التدريب</h3>
+            <p>الساحل الشمالي – مدينة الحمام – ملعب مشري</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 أكاديمية الخطوة الأولى لكرة القدم. جميع الحقوق محفوظة.</p>
+      <p>تصنع الأبطال من أول خطوة.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/201225990118" target="_blank" aria-label="تواصل واتساب">
+    واتساب
+  </a>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}?v=elite-home-2"></script>
+</body>
+</html>
