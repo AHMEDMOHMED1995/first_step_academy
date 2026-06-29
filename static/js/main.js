@@ -1,209 +1,197 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".nav-menu");
-  const header = document.querySelector(".site-header");
+// ======================================================
+// First Step Academy - Static Vercel Version
+// المسار: static/js/main.js
+// التعديل: تشغيل الموقع بدون Flask وبدون PDF + إرسال رسالة واتساب منسقة
+// ======================================================
 
-  const pageIds = [
-    "home",
-    "about",
-    "programs",
-    "coach",
-    "identity",
-    "join",
-    "contact"
-  ];
+(function () {
+  "use strict";
 
-  function getPageSections() {
-    return pageIds
-      .map(function (id) {
-        return document.getElementById(id);
-      })
-      .filter(function (section) {
-        return section !== null;
-      });
-  }
+  const WHATSAPP_NUMBER = "201225990118";
 
-  function forceShow(section) {
-    section.classList.remove("hidden-page");
-    section.classList.add("active-page");
-    section.style.display = "block";
-    section.style.visibility = "visible";
-    section.style.opacity = "1";
-  }
+  const pageIds = ["home", "about", "programs", "coach", "identity", "join", "contact"];
 
-  function forceHide(section) {
-    section.classList.add("hidden-page");
-    section.classList.remove("active-page");
-    section.style.display = "none";
-  }
+  function showPage(targetId) {
+    const safeId = pageIds.includes(targetId) ? targetId : "home";
 
-  function setActiveLink(pageId) {
-    document.querySelectorAll(".nav-menu a").forEach(function (link) {
-      const href = link.getAttribute("href");
+    pageIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (!section) return;
 
-      if (href === "#" + pageId) {
-        link.classList.add("active-link");
+      if (id === safeId) {
+        section.style.display = "";
+        section.classList.add("active-page");
       } else {
-        link.classList.remove("active-link");
-      }
-    });
-  }
-
-  function hideUnlinkedSections() {
-    document.querySelectorAll("main > section").forEach(function (section) {
-      const sectionId = section.getAttribute("id");
-
-      if (!sectionId || !pageIds.includes(sectionId)) {
         section.style.display = "none";
-        section.classList.add("hidden-page");
-      }
-    });
-  }
-
-  function showPage(pageId) {
-    if (!pageIds.includes(pageId)) {
-      pageId = "home";
-    }
-
-    const targetSection = document.getElementById(pageId);
-
-    if (!targetSection) {
-      pageId = "home";
-    }
-
-    getPageSections().forEach(function (section) {
-      const id = section.getAttribute("id");
-
-      if (id === pageId) {
-        forceShow(section);
-      } else {
-        forceHide(section);
+        section.classList.remove("active-page");
       }
     });
 
-    hideUnlinkedSections();
-    setActiveLink(pageId);
+    document.querySelectorAll(".nav-menu a, .nav-link").forEach((link) => {
+      const href = (link.getAttribute("href") || "").replace("#", "");
+      link.classList.toggle("active", href === safeId);
+    });
 
-    if (navMenu) {
-      navMenu.classList.remove("active");
-    }
-
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      const href = link.getAttribute("href");
+  function initNavigation() {
+    const initialHash = (window.location.hash || "#home").replace("#", "");
+    showPage(initialHash);
 
-      if (!href || href === "#") {
+    document.addEventListener("click", function (event) {
+      const link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      const targetId = link.getAttribute("href").replace("#", "");
+      if (!pageIds.includes(targetId)) return;
+
+      event.preventDefault();
+      history.pushState(null, "", "#" + targetId);
+      showPage(targetId);
+    });
+
+    window.addEventListener("hashchange", function () {
+      const targetId = (window.location.hash || "#home").replace("#", "");
+      showPage(targetId);
+    });
+  }
+
+  function getFormValue(form, name) {
+    const field = form.querySelector(`[name="${name}"], #${name}`);
+    return field ? String(field.value || "").trim() : "";
+  }
+
+  function getAnyValue(form, names) {
+    for (const name of names) {
+      const value = getFormValue(form, name);
+      if (value) return value;
+    }
+    return "";
+  }
+
+  function buildRegistrationData(form) {
+    const now = new Date();
+    const requestNumber = "FSA-" + now.getFullYear() + "-" + String(Date.now()).slice(-6);
+
+    return {
+      requestNumber,
+      createdAt: now.toLocaleString("ar-EG"),
+
+      playerName: getAnyValue(form, ["playerName", "player_name", "name"]),
+      playerAge: getAnyValue(form, ["playerAge", "player_age", "age"]),
+      birthDate: getAnyValue(form, ["birthDate", "birth_date"]),
+      playerPosition: getAnyValue(form, ["playerPosition", "player_position", "position"]),
+      playerLevel: getAnyValue(form, ["playerLevel", "player_level", "level"]),
+      preferredFoot: getAnyValue(form, ["preferredFoot", "preferred_foot"]),
+      previousAcademy: getAnyValue(form, ["previousAcademy", "previous_academy"]),
+      healthNotes: getAnyValue(form, ["healthNotes", "health_notes"]),
+
+      guardianName: getAnyValue(form, ["guardianName", "guardian_name"]),
+      relation: getAnyValue(form, ["relation"]),
+      phoneNumber: getAnyValue(form, ["phoneNumber", "phone", "phone_number"]),
+      whatsappNumber: getAnyValue(form, ["whatsappNumber", "whatsapp", "whatsapp_number"]),
+      alternativePhone: getAnyValue(form, ["alternativePhone", "alternative_phone"]),
+      area: getAnyValue(form, ["area", "address"]),
+
+      trainingGoal: getAnyValue(form, ["trainingGoal", "training_goal"]),
+      preferredTime: getAnyValue(form, ["preferredTime", "preferred_time"]),
+      subscriptionType: getAnyValue(form, ["subscriptionType", "subscription_type"]),
+      paymentMethod: getAnyValue(form, ["paymentMethod", "payment_method"]),
+      paymentStatus: getAnyValue(form, ["paymentStatus", "payment_status"]),
+      paymentReference: getAnyValue(form, ["paymentReference", "payment_reference"]),
+      notes: getAnyValue(form, ["notes"])
+    };
+  }
+
+  function valueOrDash(value) {
+    return value && String(value).trim() ? String(value).trim() : "-";
+  }
+
+  function buildWhatsAppMessage(data) {
+    return [
+      "⚽ *طلب تسجيل جديد - أكاديمية الخطوة الأولى لكرة القدم*",
+      "",
+      "━━━━━━━━━━━━━━",
+      "*بيانات الطلب*",
+      "━━━━━━━━━━━━━━",
+      "1. رقم الطلب: " + valueOrDash(data.requestNumber),
+      "2. تاريخ الطلب: " + valueOrDash(data.createdAt),
+      "",
+      "━━━━━━━━━━━━━━",
+      "*أولًا: بيانات اللاعب*",
+      "━━━━━━━━━━━━━━",
+      "3. اسم اللاعب: " + valueOrDash(data.playerName),
+      "4. سن اللاعب: " + valueOrDash(data.playerAge),
+      "5. تاريخ الميلاد: " + valueOrDash(data.birthDate),
+      "6. مركز اللاعب: " + valueOrDash(data.playerPosition),
+      "7. مستوى اللاعب: " + valueOrDash(data.playerLevel),
+      "8. القدم المفضلة: " + valueOrDash(data.preferredFoot),
+      "9. هل لعب سابقًا؟: " + valueOrDash(data.previousAcademy),
+      "10. ملاحظات صحية: " + valueOrDash(data.healthNotes),
+      "",
+      "━━━━━━━━━━━━━━",
+      "*ثانيًا: بيانات ولي الأمر*",
+      "━━━━━━━━━━━━━━",
+      "11. اسم ولي الأمر: " + valueOrDash(data.guardianName),
+      "12. صلة القرابة: " + valueOrDash(data.relation),
+      "13. رقم الهاتف الأساسي: " + valueOrDash(data.phoneNumber),
+      "14. رقم واتساب: " + valueOrDash(data.whatsappNumber),
+      "15. رقم بديل: " + valueOrDash(data.alternativePhone),
+      "16. المنطقة / العنوان: " + valueOrDash(data.area),
+      "",
+      "━━━━━━━━━━━━━━",
+      "*ثالثًا: التدريب والدفع*",
+      "━━━━━━━━━━━━━━",
+      "17. هدف التسجيل: " + valueOrDash(data.trainingGoal),
+      "18. الموعد المناسب: " + valueOrDash(data.preferredTime),
+      "19. نوع الاشتراك: " + valueOrDash(data.subscriptionType),
+      "20. طريقة الدفع: " + valueOrDash(data.paymentMethod),
+      "21. حالة الدفع: " + valueOrDash(data.paymentStatus),
+      "22. رقم العملية / ملاحظة الدفع: " + valueOrDash(data.paymentReference),
+      "",
+      "━━━━━━━━━━━━━━",
+      "*ملاحظات إضافية*",
+      "━━━━━━━━━━━━━━",
+      valueOrDash(data.notes),
+      "",
+      "✅ تم إرسال الطلب من موقع أكاديمية الخطوة الأولى لكرة القدم."
+    ].join("\n");
+  }
+
+  function initRegistrationForm() {
+    const form =
+      document.querySelector("#joinForm") ||
+      document.querySelector("#bookingForm") ||
+      document.querySelector("#join form") ||
+      document.querySelector("form");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const data = buildRegistrationData(form);
+
+      if (!data.playerName || !data.guardianName || !data.phoneNumber) {
+        alert("من فضلك املأ اسم اللاعب واسم ولي الأمر ورقم الهاتف.");
         return;
       }
 
-      const pageId = href.replace("#", "");
+      const message = buildWhatsAppMessage(data);
 
-      if (pageIds.includes(pageId)) {
-        event.preventDefault();
-        history.pushState(null, "", "#" + pageId);
-        showPage(pageId);
-      }
-    });
-  });
+      const url =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
 
-  window.addEventListener("popstate", function () {
-    const pageId = window.location.hash.replace("#", "") || "home";
-    showPage(pageId);
-  });
-
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", function () {
-      navMenu.classList.toggle("active");
+      window.open(url, "_blank", "noopener,noreferrer");
     });
   }
 
-  window.addEventListener("scroll", function () {
-    if (!header) return;
-
-    if (window.scrollY > 30) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+    initNavigation();
+    initRegistrationForm();
   });
-
-  function getValue(id) {
-    const element = document.getElementById(id);
-    return element ? element.value.trim() : "";
-  }
-
-  const joinForm = document.getElementById("joinForm");
-
-  if (joinForm) {
-    joinForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
-
-      const data = {
-        playerName: getValue("playerName"),
-        playerAge: getValue("playerAge"),
-        birthDate: getValue("birthDate"),
-        playerPosition: getValue("playerPosition"),
-        playerLevel: getValue("playerLevel"),
-        preferredFoot: getValue("preferredFoot"),
-        previousAcademy: getValue("previousAcademy"),
-        healthNotes: getValue("healthNotes"),
-
-        guardianName: getValue("guardianName"),
-        relation: getValue("relation"),
-        phoneNumber: getValue("phoneNumber"),
-        whatsappNumber: getValue("whatsappNumber"),
-        alternativePhone: getValue("alternativePhone"),
-        area: getValue("area"),
-
-        trainingGoal: getValue("trainingGoal"),
-        preferredTime: getValue("preferredTime"),
-        subscriptionType: getValue("subscriptionType"),
-        paymentMethod: getValue("paymentMethod"),
-        paymentStatus: getValue("paymentStatus"),
-        paymentReference: getValue("paymentReference"),
-        notes: getValue("notes")
-      };
-
-      try {
-        const whatsappWindow = window.open("", "_blank");
-
-        const response = await fetch("/submit-booking", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
-        if (result.success && result.whatsapp_url) {
-          alert("تم إنشاء طلب الحجز بنجاح\nرقم الطلب: " + result.request_number);
-
-          if (whatsappWindow) {
-            whatsappWindow.location.href = result.whatsapp_url;
-          } else {
-            window.open(result.whatsapp_url, "_blank");
-          }
-
-          joinForm.reset();
-        } else {
-          alert(result.message || "حدث خطأ أثناء إرسال الطلب.");
-
-          if (whatsappWindow) {
-            whatsappWindow.close();
-          }
-        }
-      } catch (error) {
-        alert("حدث خطأ في الاتصال بالسيرفر. تأكد أن السيرفر يعمل.");
-        console.error(error);
-      }
-    });
-  }
-
-  const firstPage = window.location.hash.replace("#", "") || "home";
-  showPage(firstPage);
-});
+})();
